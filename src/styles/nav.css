@@ -49,6 +49,7 @@
   cursor: pointer;
   transition: opacity 0.1s, transform 0.4s;
 }
+
 .nav__toggle-close {
   opacity: 0;
 }
@@ -93,15 +94,17 @@
   pointer-events: initial;
 }
 
-/* Show icon */
-.show-icon .nav__toggle-menu {
-  opacity: 0;
-  transform: rotate(90deg);
+/* Show/hide menu icons */
+.show-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: opacity 0.3s, transform 0.3s;
 }
 
-.show-icon .nav__toggle-close {
-  opacity: 1;
+.hide-icon {
+  opacity: 0;
   transform: rotate(90deg);
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 /*=============== DROPDOWN ===============*/
@@ -159,6 +162,10 @@
   color: var(--title-color);
 }
 
+/* Affichage du sous-menu */
+.show-dropdown {
+  height: 300px;
+}
 /* Rotate dropdown icon */
 .show-dropdown .dropdown__arrow {
   transform: rotate(180deg);
@@ -212,6 +219,7 @@
     pointer-events: none;
     opacity: 0;
     transition: top 0.4s, opacity 0.3s;
+    z-index: 10;
   }
   .dropdown__content {
     grid-template-columns: repeat(4, max-content);
@@ -269,4 +277,8 @@
   .container {
     margin-inline: auto;
   }
+}
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
 }
