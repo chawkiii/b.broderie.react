@@ -1,5 +1,9 @@
 import React from "react";
 import "../styles/contact.css";
+import instaIcon from "../assets/icons/icons8-instagram-48.png";
+import fbIcon from "../assets/icons/icons8-facebook-48.png";
+import whatsappIcon from "../assets/icons/icons8-whatsapp-48.png";
+import gmailIcon from "../assets/icons/gmail.png";
 
 const Contact = () => {
   return (
@@ -53,7 +57,7 @@ const Contact = () => {
 
           <div className="social-media">
             <a href="#" className="network-element email" title="Send us email">
-              <img src="/icons/gmail.png" alt="email" />
+              <img src={gmailIcon} alt="email" />
               info@bbroderie.com
             </a>
             <a
@@ -61,7 +65,7 @@ const Contact = () => {
               className="network-element whatsapp"
               title="Contact us on WhatsApp"
             >
-              <img src="/icons/icons8-whatsapp-48.png" alt="WhatsApp" />
+              <img src={whatsappIcon} alt="WhatsApp" />
               0661296751
             </a>
             <a
@@ -69,7 +73,7 @@ const Contact = () => {
               className="network-element facebook"
               title="Follow us on Facebook"
             >
-              <img src="/icons/icons8-facebook-48.png" alt="Facebook" />
+              <img src={fbIcon} alt="Facebook" />
               Facebook
             </a>
             <a
@@ -77,7 +81,7 @@ const Contact = () => {
               className="network-element instagram"
               title="Follow us on Instagram"
             >
-              <img src="/icons/icons8-instagram-48.png" alt="instagram" />
+              <img src={instaIcon} alt="instagram" />
               Instagram
             </a>
           </div>

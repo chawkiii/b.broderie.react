@@ -1,5 +1,9 @@
 import React from "react";
 import "../styles/footer.css";
+import fbIcon from "../assets/icons/icons8-facebook-48.png";
+import instaIcon from "../assets/icons/icons8-instagram-48.png";
+import whatsappIcon from "../assets/icons/icons8-whatsapp-48.png";
+import githubIcon from "../assets/icons/icons8-github-64.png";
 
 function Footer() {
   return (
@@ -102,16 +106,16 @@ function Footer() {
             <h3>Connect with Us</h3>
             <div className="footer-social"></div>
             <a href="https://facebook.com" title="Facebook">
-              <img src="/icons/icons8-facebook-48.png" alt="Facebook" />
+              <img src={fbIcon} alt="Facebook" />
             </a>
             <a href="https://instagram.com" title="Instagram">
-              <img src="/icons/icons8-instagram-48.png" alt="Instagram" />
+              <img src={instaIcon} alt="Instagram" />
             </a>
             <a href="https://wa.me/tonnumero" title="WhatsApp">
-              <img src="/icons/icons8-whatsapp-48.png" alt="WhatsApp" />
+              <img src={whatsappIcon} alt="WhatsApp" />
             </a>
             <a href="https://github.com/toncompte" title="GitHub">
-              <img src="/icons/icons8-github-64.png" alt="GitHub" />
+              <img src={githubIcon} alt="GitHub" />
             </a>
           </div>
 
