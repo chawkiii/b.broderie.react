@@ -4,8 +4,7 @@ import "./styles/app.css";
 import Nav from "./nav/Nav.js";
 import Home from "./home/Home.js";
 import Services from "./services/Services.js";
-import About from "./about/About.js";
-import Contact from "./contact/Contact.js";
+import Footer from "./footer/Footer.js";
 
 const App = () => {
   return (
@@ -13,10 +12,9 @@ const App = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/skills" element={<Services />} />
-        <Route path="/projects" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

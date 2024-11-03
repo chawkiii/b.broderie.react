@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/nav.css";
+import navLogo from "../assets/nav-logo.png";
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -26,7 +27,7 @@ const Nav = () => {
     <header className="header">
       <nav className="nav container">
         <div className="nav__data">
-          <a className="nav__logo">Logo</a>
+          <img src={navLogo} alt="Logo" className="nav__logo" />
           <div
             className="nav__toggle"
             onClick={() => setShowMenu(!showMenu)}
@@ -50,11 +51,6 @@ const Nav = () => {
           id="nav-menu"
         >
           <ul className="nav__list">
-            <li>
-              <a href="#" className="nav__link">
-                Home
-              </a>
-            </li>
             <li className="dropdown__item">
               <div
                 className="nav__link dropdown__button"
@@ -63,7 +59,7 @@ const Nav = () => {
                 role="button"
                 tabIndex={0}
               >
-                Services{" "}
+                Home{" "}
                 <i
                   className={`ri-arrow-down-s-line dropdown__arrow ${
                     showDropdown === 0 ? "rotate" : ""
@@ -79,7 +75,69 @@ const Nav = () => {
                 <div className="dropdown__content">
                   <div className="dropdown__group">
                     <div className="dropdown__icon">
-                      <i className="ri-flashlight-line"></i>
+                      <i className="ri-home-smile-line"></i>
+                    </div>
+                    <span className="dropdown__title">About</span>
+                    <ul className="dropdown__list">
+                      <li>
+                        <a href="#" className="dropdown__link">
+                          Who we are ?
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="dropdown__link">
+                          What we do ?
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="dropdown__group">
+                    <div className="dropdown__icon">
+                      <i className="ri-contacts-book-line"></i>
+                    </div>
+                    <span className="dropdown__title">Contact</span>
+                    <ul className="dropdown__list">
+                      <li>
+                        <a href="#" className="dropdown__link">
+                          Socials
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="dropdown__link">
+                          Maps
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li className="dropdown__item">
+              <div
+                className="nav__link dropdown__button"
+                onClick={() => toggleDropdown(1)}
+                aria-expanded={showDropdown === 1}
+                role="button"
+                tabIndex={1}
+              >
+                Services{" "}
+                <i
+                  className={`ri-arrow-down-s-line dropdown__arrow ${
+                    showDropdown === 1 ? "rotate" : ""
+                  }`}
+                ></i>
+              </div>
+
+              <div
+                className={`dropdown__container ${
+                  showDropdown === 1 ? "show-dropdown" : ""
+                }`}
+              >
+                <div className="dropdown__content">
+                  <div className="dropdown__group">
+                    <div className="dropdown__icon">
+                      <i className="ri-shopping-cart-line"></i>
                     </div>
                     <span className="dropdown__title">shop</span>
                     <ul className="dropdown__list">
@@ -97,7 +155,7 @@ const Nav = () => {
                   </div>
                   <div className="dropdown__group">
                     <div className="dropdown__icon">
-                      <i className="ri-shield-line"></i>
+                      <i className="ri-hand-coin-line"></i>
                     </div>
                     <span className="dropdown__title">B2B Partnership</span>
                     <ul className="dropdown__list">
@@ -118,12 +176,12 @@ const Nav = () => {
             </li>
             <li>
               <a href="#" className="nav__link">
-                About
+                Cart
               </a>
             </li>
             <li>
               <a href="#" className="nav__link">
-                Contact
+                Langue
               </a>
             </li>
           </ul>
