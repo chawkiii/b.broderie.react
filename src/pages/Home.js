@@ -14,7 +14,6 @@ function Home() {
           <br />
           B.broderie & confection
         </h1>
-        <About />
         <Contact />
       </section>
     </>

@@ -63,7 +63,7 @@ const Nav = () => {
           id="nav-menu"
         >
           <ul className="nav__list">
-            {/* Home Dropdown */}
+            {/* About Dropdown */}
             <li className="dropdown__item">
               <div
                 className="nav__link dropdown__button"
@@ -73,7 +73,7 @@ const Nav = () => {
                 tabIndex={0}
                 onKeyDown={(e) => e.key === "Enter" && toggleDropdown(0)}
               >
-                Home
+                About
                 <i
                   className={`ri-arrow-down-s-line dropdown__arrow ${
                     showDropdown === 0 ? "rotate" : ""
@@ -112,37 +112,11 @@ const Nav = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="dropdown__group">
-                    <div className="dropdown__icon">
-                      <i className="ri-contacts-book-line"></i>
-                    </div>
-                    <span className="dropdown__title">Contact</span>
-                    <ul className="dropdown__list">
-                      <li>
-                        <Link
-                          to="/about#socials"
-                          className="dropdown__link"
-                          onClick={() => setShowMenu(false)}
-                        >
-                          Socials
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/about#maps"
-                          className="dropdown__link"
-                          onClick={() => setShowMenu(false)}
-                        >
-                          Maps
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </li>
 
-            {/* Services Dropdown */}
+            {/* Shop Dropdown */}
             <li className="dropdown__item">
               <div
                 className="nav__link dropdown__button"
@@ -152,7 +126,7 @@ const Nav = () => {
                 tabIndex={1}
                 onKeyDown={(e) => e.key === "Enter" && toggleDropdown(1)}
               >
-                Services
+                Shop
                 <i
                   className={`ri-arrow-down-s-line dropdown__arrow ${
                     showDropdown === 1 ? "rotate" : ""
@@ -169,7 +143,7 @@ const Nav = () => {
                     <div className="dropdown__icon">
                       <i className="ri-shopping-cart-line"></i>
                     </div>
-                    <span className="dropdown__title">Shop</span>
+                    <span className="dropdown__title">Categories</span>
                     <ul className="dropdown__list">
                       <li>
                         <Link
@@ -189,13 +163,49 @@ const Nav = () => {
                           Custom wear
                         </Link>
                       </li>
+                      <li>
+                        <Link
+                          to="/shop#professional"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          Professional wear
+                        </Link>
+                      </li>
                     </ul>
                   </div>
+                </div>
+              </div>
+            </li>
+
+            {/* Services Dropdown */}
+            <li className="dropdown__item">
+              <div
+                className="nav__link dropdown__button"
+                onClick={() => toggleDropdown(2)}
+                aria-expanded={showDropdown === 2}
+                role="button"
+                tabIndex={2}
+                onKeyDown={(e) => e.key === "Enter" && toggleDropdown(2)}
+              >
+                Services
+                <i
+                  className={`ri-arrow-down-s-line dropdown__arrow ${
+                    showDropdown === 2 ? "rotate" : ""
+                  }`}
+                ></i>
+              </div>
+              <div
+                className={`dropdown__container ${
+                  showDropdown === 2 ? "show-dropdown" : ""
+                }`}
+              >
+                <div className="dropdown__content">
                   <div className="dropdown__group">
                     <div className="dropdown__icon">
-                      <i className="ri-hand-coin-line"></i>
+                      <i className="ri-tools-line"></i>
                     </div>
-                    <span className="dropdown__title">B2B Partnership</span>
+                    <span className="dropdown__title">Our Services</span>
                     <ul className="dropdown__list">
                       <li>
                         <Link
@@ -203,7 +213,7 @@ const Nav = () => {
                           className="dropdown__link"
                           onClick={() => setShowMenu(false)}
                         >
-                          Broderie
+                          Embroidery
                         </Link>
                       </li>
                       <li>
@@ -213,6 +223,15 @@ const Nav = () => {
                           onClick={() => setShowMenu(false)}
                         >
                           Confection
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/services#flocage"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          Flocage
                         </Link>
                       </li>
                     </ul>
