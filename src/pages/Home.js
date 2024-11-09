@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/home.css";
 import welcome from "../assets/welcome.png";
-import About from "../about/About";
-import Contact from "../contact/Contact";
+import About from "../pages/About";
+import Contact from "../components/contact/Contact";
 
 function Home() {
   return (

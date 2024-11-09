@@ -1,9 +1,9 @@
 import React from "react";
-import "../styles/footer.css";
-import fbIcon from "../assets/icons/icons8-facebook-48.png";
-import instaIcon from "../assets/icons/icons8-instagram-48.png";
-import whatsappIcon from "../assets/icons/icons8-whatsapp-48.png";
-import githubIcon from "../assets/icons/icons8-github-64.png";
+import "../../styles/footer.css";
+import fbIcon from "../../assets/icons/icons8-facebook-48.png";
+import instaIcon from "../../assets/icons/icons8-instagram-48.png";
+import whatsappIcon from "../../assets/icons/icons8-whatsapp-48.png";
+import githubIcon from "../../assets/icons/icons8-github-64.png";
 
 function Footer() {
   return (
@@ -19,7 +19,8 @@ function Footer() {
 
           {/* Menu principal */}
           <div className="footer-links">
-            <h3>Menu</h3>
+            <h3>Home</h3>
+
             <ul>
               <li>
                 <a href="#home" title="Home">
@@ -27,28 +28,13 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#services" title="Our Services">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#about" title="About Us">
+                <a href="#about" title="About">
                   About
                 </a>
               </li>
               <li>
-                <a href="#contact" title="Contact Us">
+                <a href="#contact" title="Contact">
                   Contact
-                </a>
-              </li>
-              <li>
-                <a href="b2b.html" title="B2B Partnership">
-                  B2B
-                </a>
-              </li>
-              <li>
-                <a href="shop.html" title="Shop Online">
-                  Shop
                 </a>
               </li>
             </ul>

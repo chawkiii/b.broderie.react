@@ -1,9 +1,9 @@
 import React from "react";
-import "../styles/contact.css";
-import instaIcon from "../assets/icons/icons8-instagram-48.png";
-import fbIcon from "../assets/icons/icons8-facebook-48.png";
-import whatsappIcon from "../assets/icons/icons8-whatsapp-48.png";
-import gmailIcon from "../assets/icons/gmail.png";
+import "../../styles/contact.css";
+import instaIcon from "../../assets/icons/icons8-instagram-48.png";
+import fbIcon from "../../assets/icons/icons8-facebook-48.png";
+import whatsappIcon from "../../assets/icons/icons8-whatsapp-48.png";
+import gmailIcon from "../../assets/icons/gmail.png";
 
 const Contact = () => {
   return (

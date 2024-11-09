@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../styles/nav.css";
-import navLogo from "../assets/nav-logo.png";
+import { Link } from "react-router-dom";
+import "../../styles/nav.css";
+import navLogo from "../../assets/nav-logo.png";
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -16,10 +17,19 @@ const Nav = () => {
     }
   };
 
+  const handleClickOutside = (event) => {
+    if (!event.target.closest(".dropdown__item")) {
+      setShowDropdown(null);
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+    document.addEventListener("click", handleClickOutside);
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -27,7 +37,9 @@ const Nav = () => {
     <header className="header">
       <nav className="nav container">
         <div className="nav__data">
-          <img src={navLogo} alt="Logo" className="nav__logo" />
+          <Link to="/" className="nav__logo">
+            <img src={navLogo} alt="Logo" />
+          </Link>
           <div
             className="nav__toggle"
             onClick={() => setShowMenu(!showMenu)}
@@ -51,6 +63,7 @@ const Nav = () => {
           id="nav-menu"
         >
           <ul className="nav__list">
+            {/* Home Dropdown */}
             <li className="dropdown__item">
               <div
                 className="nav__link dropdown__button"
@@ -58,15 +71,15 @@ const Nav = () => {
                 aria-expanded={showDropdown === 0}
                 role="button"
                 tabIndex={0}
+                onKeyDown={(e) => e.key === "Enter" && toggleDropdown(0)}
               >
-                Home{" "}
+                Home
                 <i
                   className={`ri-arrow-down-s-line dropdown__arrow ${
                     showDropdown === 0 ? "rotate" : ""
                   }`}
                 ></i>
               </div>
-
               <div
                 className={`dropdown__container ${
                   showDropdown === 0 ? "show-dropdown" : ""
@@ -80,14 +93,22 @@ const Nav = () => {
                     <span className="dropdown__title">About</span>
                     <ul className="dropdown__list">
                       <li>
-                        <a href="#" className="dropdown__link">
-                          Who we are ?
-                        </a>
+                        <Link
+                          to="/about"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          Who we are?
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" className="dropdown__link">
-                          What we do ?
-                        </a>
+                        <Link
+                          to="/about#what-we-do"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          What we do?
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -98,14 +119,22 @@ const Nav = () => {
                     <span className="dropdown__title">Contact</span>
                     <ul className="dropdown__list">
                       <li>
-                        <a href="#" className="dropdown__link">
+                        <Link
+                          to="/about#socials"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
                           Socials
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" className="dropdown__link">
+                        <Link
+                          to="/about#maps"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
                           Maps
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -113,6 +142,7 @@ const Nav = () => {
               </div>
             </li>
 
+            {/* Services Dropdown */}
             <li className="dropdown__item">
               <div
                 className="nav__link dropdown__button"
@@ -120,15 +150,15 @@ const Nav = () => {
                 aria-expanded={showDropdown === 1}
                 role="button"
                 tabIndex={1}
+                onKeyDown={(e) => e.key === "Enter" && toggleDropdown(1)}
               >
-                Services{" "}
+                Services
                 <i
                   className={`ri-arrow-down-s-line dropdown__arrow ${
                     showDropdown === 1 ? "rotate" : ""
                   }`}
                 ></i>
               </div>
-
               <div
                 className={`dropdown__container ${
                   showDropdown === 1 ? "show-dropdown" : ""
@@ -139,17 +169,25 @@ const Nav = () => {
                     <div className="dropdown__icon">
                       <i className="ri-shopping-cart-line"></i>
                     </div>
-                    <span className="dropdown__title">shop</span>
+                    <span className="dropdown__title">Shop</span>
                     <ul className="dropdown__list">
                       <li>
-                        <a href="#" className="dropdown__link">
+                        <Link
+                          to="/shop#ready-to-wear"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
                           Ready to wear
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" className="dropdown__link">
+                        <Link
+                          to="/shop#custom-wear"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
                           Custom wear
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -160,29 +198,49 @@ const Nav = () => {
                     <span className="dropdown__title">B2B Partnership</span>
                     <ul className="dropdown__list">
                       <li>
-                        <a href="#" className="dropdown__link">
+                        <Link
+                          to="/services#broderie"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
                           Broderie
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#" className="dropdown__link">
+                        <Link
+                          to="/services#confection"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
                           Confection
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </li>
+
+            {/* Cart Link */}
             <li>
-              <a href="#" className="nav__link">
+              <Link
+                to="/cart"
+                className="nav__link"
+                onClick={() => setShowMenu(false)}
+              >
                 Cart
-              </a>
+              </Link>
             </li>
+
+            {/* Language Selector */}
             <li>
-              <a href="#" className="nav__link">
+              <Link
+                to="/language"
+                className="nav__link"
+                onClick={() => setShowMenu(false)}
+              >
                 Langue
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
