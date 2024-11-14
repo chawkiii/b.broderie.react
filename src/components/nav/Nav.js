@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/nav.css";
-import navLogo from "../../assets/nav-logo.png";
+import navLogo from "../../assets/logo/nav-logo.png";
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -205,7 +205,7 @@ const Nav = () => {
                     <div className="dropdown__icon">
                       <i className="ri-tools-line"></i>
                     </div>
-                    <span className="dropdown__title">Our Services</span>
+
                     <ul className="dropdown__list">
                       <li>
                         <Link
@@ -252,14 +252,66 @@ const Nav = () => {
             </li>
 
             {/* Language Selector */}
-            <li>
-              <Link
-                to="/language"
-                className="nav__link"
-                onClick={() => setShowMenu(false)}
+
+            <li className="dropdown__item">
+              <div
+                className="nav__link dropdown__button"
+                onClick={() => toggleDropdown(3)}
+                aria-expanded={showDropdown === 3}
+                role="button"
+                tabIndex={3}
+                onKeyDown={(e) => e.key === "Enter" && toggleDropdown(3)}
               >
                 Langue
-              </Link>
+                <i
+                  className={`ri-arrow-down-s-line dropdown__arrow ${
+                    showDropdown === 3 ? "rotate" : ""
+                  }`}
+                ></i>
+              </div>
+              <div
+                className={`dropdown__container ${
+                  showDropdown === 3 ? "show-dropdown" : ""
+                }`}
+              >
+                <div className="dropdown__content">
+                  <div className="dropdown__group">
+                    <div className="dropdown__icon">
+                      <i className="ri-tools-line"></i>
+                    </div>
+
+                    <ul className="dropdown__list">
+                      <li>
+                        <Link
+                          to="/language"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          Francais
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/language"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          English
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/language"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          Arabe
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
         </div>

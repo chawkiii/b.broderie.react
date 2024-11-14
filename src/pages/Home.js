@@ -1,21 +1,13 @@
 import React from "react";
 import "../styles/home.css";
-import welcome from "../assets/welcome.png";
-import About from "../pages/About";
-import Contact from "../components/contact/Contact";
+import Overview from "../components/overview/Overview";
 
 function Home() {
   return (
     <>
-      <section>
-        <h1 className="home_header">
-          <img src={welcome} alt="welcomme " />
-          to
-          <br />
-          B.broderie & confection
-        </h1>
-        <Contact />
-      </section>
+      <main>
+        <Overview />
+      </main>
     </>
   );
 }

@@ -170,7 +170,7 @@
 
 /* Affichage du sous-menu */
 .show-dropdown {
-  height: 300px;
+  height: auto;
 }
 /* Rotate dropdown icon */
 .show-dropdown .dropdown__arrow {

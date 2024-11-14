@@ -2,7 +2,7 @@ import React from "react";
 
 function Services() {
   return (
-    <>
+    <main>
       <h1>Services</h1>
       <ul>
         <li>
@@ -20,7 +20,7 @@ function Services() {
           </ul>
         </li>
       </ul>
-    </>
+    </main>
   );
 }
 

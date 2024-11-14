@@ -5,7 +5,7 @@ import "./styles/app.css";
 // Import des composants principaux
 import Nav from "./components/nav/Nav.js";
 import Footer from "./components/footer/Footer.js";
-import LanguageSelector from "./components/langueSelector/LanguageSelector.js";
+import Contact from "./components/contact/Contact.js";
 
 // Import des pages
 import Home from "./pages/Home";
@@ -13,14 +13,14 @@ import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Services from "./pages/Services";
 import Cart from "./pages/Cart";
+import Header from "./components/header/Header.js";
 
 const App = () => {
   return (
     <Router>
-      {/* Navigation présente sur toutes les pages */}
       <Nav />
+      <Header />
 
-      {/* Routes de l'application */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -28,9 +28,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
-
-      {/* Sélecteur de langue et footer communs */}
-      <LanguageSelector />
+      <Contact />
       <Footer />
     </Router>
   );
