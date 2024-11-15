@@ -1,5 +1,6 @@
 import React from "react";
 import welcome from "../../assets/header/welcome.png";
+import "../../styles/header.css";
 
 function Header() {
   return (
