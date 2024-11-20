@@ -13,7 +13,7 @@ const images = [
     src: img1,
     name: "Embodery",
     description:
-      "industriel embodery services and products made with a superior quality.",
+      "Industriel embroidery services and products made with superior quality.",
   },
   {
     src: img2,
@@ -24,59 +24,60 @@ const images = [
     src: img3,
     name: "Shop",
     description:
-      "Ready to wear, Professionals, or wanna customised wearing, we can satisfy you.",
+      "Ready to wear, professionals, or want customized wear, we can satisfy you.",
   },
   {
     src: img4,
     name: "Services",
-    description: "We can provide a srvices of embodery, flocage, serigraphy...",
+    description:
+      "We can provide services such as embroidery, flocage, serigraphy...",
   },
   {
     src: img5,
     name: "TECHNOLOGY",
     description:
-      "We are professional with the best tools and machines in the industry.",
+      "We are professionals with the best tools and machines in the industry.",
   },
   {
     src: img6,
     name: "B2B",
-    description: "We are open to partnership.",
+    description: "We are open to partnerships.",
   },
 ];
 
 function Overview() {
   const slideRef = useRef(null);
-  const intervalRef = useRef(null); // Référence pour stocker l'intervalle
+  const intervalRef = useRef(null); // Reference for storing the interval
 
   const startAutoSlide = () => {
-    clearInterval(intervalRef.current); // Assurez-vous qu'aucun intervalle précédent ne tourne
+    clearInterval(intervalRef.current); // Ensure no previous interval is running
     intervalRef.current = setInterval(() => {
       handleNext();
-    }, 10000); // Intervalle de 10 secondes
+    }, 10000); // Interval of 10 seconds
   };
 
   const handleNext = () => {
     const slide = slideRef.current;
     if (slide) {
-      slide.appendChild(slide.children[0]); // Ajout de la première image à la fin
+      slide.appendChild(slide.children[0]); // Add the first image to the end
     }
-    startAutoSlide(); // Réinitialise l'intervalle après un défilement manuel
+    startAutoSlide(); // Reset the interval after a manual slide
   };
 
   const handlePrev = () => {
     const slide = slideRef.current;
     if (slide) {
-      slide.prepend(slide.children[slide.children.length - 1]); // Ajout de la dernière image au début
+      slide.prepend(slide.children[slide.children.length - 1]); // Add the last image to the start
     }
-    startAutoSlide(); // Réinitialise l'intervalle après un défilement manuel
+    startAutoSlide(); // Reset the interval after a manual slide
   };
 
-  // Défilement automatique
+  // Automatic slide
   useEffect(() => {
-    startAutoSlide(); // Démarre le défilement automatique
+    startAutoSlide(); // Start the automatic slide
 
-    return () => clearInterval(intervalRef.current); // Nettoie l'intervalle lors du démontage
-  }, []); // Ajout de 'handleNext' et 'handlePrev' aux dépendances
+    return () => clearInterval(intervalRef.current); // Clean up the interval on unmount
+  }, [startAutoSlide, handleNext, handlePrev]); // Add 'startAutoSlide', 'handleNext', and 'handlePrev' as dependencies
 
   return (
     <section className="overview">
