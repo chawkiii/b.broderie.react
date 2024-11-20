@@ -51,7 +51,8 @@ const Contact = () => {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+                title="Map showing our location"
+              />
             </div>
           </div>
 
