@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import "../../styles/overview.css";
 
 import img1 from "../../assets/overview/1.jpg";
@@ -49,35 +49,38 @@ function Overview() {
   const slideRef = useRef(null);
   const intervalRef = useRef(null); // Reference for storing the interval
 
-  const startAutoSlide = () => {
+  // Memorize the startAutoSlide function
+  const startAutoSlide = useCallback(() => {
     clearInterval(intervalRef.current); // Ensure no previous interval is running
     intervalRef.current = setInterval(() => {
       handleNext();
     }, 10000); // Interval of 10 seconds
-  };
+  }, []);
 
-  const handleNext = () => {
+  // Memorize the handleNext function
+  const handleNext = useCallback(() => {
     const slide = slideRef.current;
     if (slide) {
       slide.appendChild(slide.children[0]); // Add the first image to the end
     }
     startAutoSlide(); // Reset the interval after a manual slide
-  };
+  }, [startAutoSlide]);
 
-  const handlePrev = () => {
+  // Memorize the handlePrev function
+  const handlePrev = useCallback(() => {
     const slide = slideRef.current;
     if (slide) {
       slide.prepend(slide.children[slide.children.length - 1]); // Add the last image to the start
     }
     startAutoSlide(); // Reset the interval after a manual slide
-  };
+  }, [startAutoSlide]);
 
   // Automatic slide
   useEffect(() => {
     startAutoSlide(); // Start the automatic slide
 
     return () => clearInterval(intervalRef.current); // Clean up the interval on unmount
-  }, [startAutoSlide, handleNext, handlePrev]); // Add 'startAutoSlide', 'handleNext', and 'handlePrev' as dependencies
+  }, [startAutoSlide]); // Only run this effect when startAutoSlide changes
 
   return (
     <section className="overview">
