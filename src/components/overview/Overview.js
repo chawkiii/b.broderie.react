@@ -52,18 +52,22 @@ function Overview() {
     clearInterval(intervalRef.current); // Assurez-vous qu'aucun intervalle précédent ne tourne
     intervalRef.current = setInterval(() => {
       handleNext();
-    }, 10000);
+    }, 10000); // Intervalle de 10 secondes
   };
 
   const handleNext = () => {
     const slide = slideRef.current;
-    slide.appendChild(slide.children[0]);
+    if (slide) {
+      slide.appendChild(slide.children[0]); // Ajout de la première image à la fin
+    }
     startAutoSlide(); // Réinitialise l'intervalle après un défilement manuel
   };
 
   const handlePrev = () => {
     const slide = slideRef.current;
-    slide.prepend(slide.children[slide.children.length - 1]);
+    if (slide) {
+      slide.prepend(slide.children[slide.children.length - 1]); // Ajout de la dernière image au début
+    }
     startAutoSlide(); // Réinitialise l'intervalle après un défilement manuel
   };
 
@@ -72,7 +76,7 @@ function Overview() {
     startAutoSlide(); // Démarre le défilement automatique
 
     return () => clearInterval(intervalRef.current); // Nettoie l'intervalle lors du démontage
-  }, []);
+  }, []); // Ajout de 'handleNext' et 'handlePrev' aux dépendances
 
   return (
     <section className="overview">
