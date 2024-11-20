@@ -57,34 +57,49 @@ const Contact = () => {
           </div>
 
           <div className="social-media">
-            <a href="#" className="network-element email" title="Send us email">
-              <img src={gmailIcon} alt="email" />
+            {/* Email button with proper alt and accessibility */}
+            <button
+              className="network-element email"
+              title="Send us email"
+              onClick={() =>
+                (window.location.href = "mailto:info@bbroderie.com")
+              }
+            >
+              <img src={gmailIcon} alt="Gmail icon" />
               info@bbroderie.com
-            </a>
+            </button>
+
+            {/* WhatsApp link */}
             <a
               href="https://wa.me/0661296751"
               className="network-element whatsapp"
               title="Contact us on WhatsApp"
             >
-              <img src={whatsappIcon} alt="WhatsApp" />
+              <img src={whatsappIcon} alt="WhatsApp icon" />
               0661296751
             </a>
+
+            {/* Facebook link */}
             <a
               href="https://www.facebook.com/YourPage"
               className="network-element facebook"
               title="Follow us on Facebook"
             >
-              <img src={fbIcon} alt="Facebook" />
+              <img src={fbIcon} alt="Facebook icon" />
               Facebook
             </a>
-            <a
-              href="#"
+
+            {/* Instagram button with a link to Instagram */}
+            <button
               className="network-element instagram"
               title="Follow us on Instagram"
+              onClick={() =>
+                (window.location.href = "https://www.instagram.com/YourPage")
+              }
             >
-              <img src={instaIcon} alt="instagram" />
+              <img src={instaIcon} alt="Instagram icon" />
               Instagram
-            </a>
+            </button>
           </div>
         </div>
       </section>
