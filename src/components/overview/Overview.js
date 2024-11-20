@@ -11,9 +11,9 @@ import img6 from "../../assets/overview/6.jpg";
 const images = [
   {
     src: img1,
-    name: "Embodery",
+    name: "Embroidery",
     description:
-      "Industriel embroidery services and products made with superior quality.",
+      "Industrial embroidery services and products made with superior quality.",
   },
   {
     src: img2,
@@ -34,7 +34,7 @@ const images = [
   },
   {
     src: img5,
-    name: "TECHNOLOGY",
+    name: "Technology",
     description:
       "We are professionals with the best tools and machines in the industry.",
   },
@@ -47,40 +47,36 @@ const images = [
 
 function Overview() {
   const slideRef = useRef(null);
-  const intervalRef = useRef(null); // Reference for storing the interval
+  const intervalRef = useRef(null);
 
-  // Memorize the startAutoSlide function
-  const startAutoSlide = useCallback(() => {
-    clearInterval(intervalRef.current); // Ensure no previous interval is running
-    intervalRef.current = setInterval(() => {
-      handleNext();
-    }, 10000); // Interval of 10 seconds
-  }, []);
-
-  // Memorize the handleNext function
+  // Function to handle next slide
   const handleNext = useCallback(() => {
     const slide = slideRef.current;
     if (slide) {
-      slide.appendChild(slide.children[0]); // Add the first image to the end
+      slide.appendChild(slide.children[0]); // Move first slide to the end
     }
-    startAutoSlide(); // Reset the interval after a manual slide
-  }, [startAutoSlide]);
+  }, []);
 
-  // Memorize the handlePrev function
+  // Function to handle previous slide
   const handlePrev = useCallback(() => {
     const slide = slideRef.current;
     if (slide) {
-      slide.prepend(slide.children[slide.children.length - 1]); // Add the last image to the start
+      slide.prepend(slide.children[slide.children.length - 1]); // Move last slide to the start
     }
-    startAutoSlide(); // Reset the interval after a manual slide
-  }, [startAutoSlide]);
+  }, []);
 
-  // Automatic slide
+  // Start automatic slide
+  const startAutoSlide = useCallback(() => {
+    intervalRef.current = setInterval(() => {
+      handleNext();
+    }, 10000); // Slide every 10 seconds
+  }, [handleNext]);
+
   useEffect(() => {
-    startAutoSlide(); // Start the automatic slide
+    startAutoSlide(); // Start auto slide on mount
 
-    return () => clearInterval(intervalRef.current); // Clean up the interval on unmount
-  }, [startAutoSlide]); // Only run this effect when startAutoSlide changes
+    return () => clearInterval(intervalRef.current); // Cleanup on unmount
+  }, [startAutoSlide]); // Depend only on startAutoSlide
 
   return (
     <section className="overview">
