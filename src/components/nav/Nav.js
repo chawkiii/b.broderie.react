@@ -90,7 +90,15 @@ const Nav = () => {
                     <div className="dropdown__icon">
                       <i className="ri-home-smile-line"></i>
                     </div>
-                    <span className="dropdown__title">About</span>
+
+                    <Link
+                      to="/about"
+                      className="dropdown__link"
+                      onClick={() => setShowMenu(false)}
+                    >
+                      <span className="dropdown__title"> About</span>
+                    </Link>
+
                     <ul className="dropdown__list">
                       <li>
                         <Link
@@ -143,7 +151,13 @@ const Nav = () => {
                     <div className="dropdown__icon">
                       <i className="ri-shopping-cart-line"></i>
                     </div>
-                    <span className="dropdown__title">Categories</span>
+                    <Link
+                      to="/shop#ready-to-wear"
+                      className="dropdown__link"
+                      onClick={() => setShowMenu(false)}
+                    >
+                      <span className="dropdown__title">Shop</span>
+                    </Link>
                     <ul className="dropdown__list">
                       <li>
                         <Link
@@ -207,6 +221,13 @@ const Nav = () => {
                     </div>
 
                     <ul className="dropdown__list">
+                      <Link
+                        to="/services"
+                        className="dropdown__link"
+                        onClick={() => setShowMenu(false)}
+                      >
+                        <span className="dropdown__title"> Services</span>
+                      </Link>
                       <li>
                         <Link
                           to="/services#broderie"
@@ -249,69 +270,6 @@ const Nav = () => {
               >
                 Cart
               </Link>
-            </li>
-
-            {/* Language Selector */}
-
-            <li className="dropdown__item">
-              <div
-                className="nav__link dropdown__button"
-                onClick={() => toggleDropdown(3)}
-                aria-expanded={showDropdown === 3}
-                role="button"
-                tabIndex={3}
-                onKeyDown={(e) => e.key === "Enter" && toggleDropdown(3)}
-              >
-                Langue
-                <i
-                  className={`ri-arrow-down-s-line dropdown__arrow ${
-                    showDropdown === 3 ? "rotate" : ""
-                  }`}
-                ></i>
-              </div>
-              <div
-                className={`dropdown__container ${
-                  showDropdown === 3 ? "show-dropdown" : ""
-                }`}
-              >
-                <div className="dropdown__content">
-                  <div className="dropdown__group">
-                    <div className="dropdown__icon">
-                      <i className="ri-tools-line"></i>
-                    </div>
-
-                    <ul className="dropdown__list">
-                      <li>
-                        <Link
-                          to="/language"
-                          className="dropdown__link"
-                          onClick={() => setShowMenu(false)}
-                        >
-                          Francais
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/language"
-                          className="dropdown__link"
-                          onClick={() => setShowMenu(false)}
-                        >
-                          English
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/language"
-                          className="dropdown__link"
-                          onClick={() => setShowMenu(false)}
-                        >
-                          Arabe
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </li>
           </ul>
         </div>
