@@ -99,9 +99,7 @@ form textarea:hover {
   align-items: center;
   margin: 20px 0;
 }
-.email {
-  color: rgb(242, 21, 21);
-}
+
 .social-media img {
   margin: 0 20px 0 20px;
   width: 48px;
@@ -111,6 +109,9 @@ form textarea:hover {
   width: 36px;
   height: 36px;
   margin: 0 26px 0 26px;
+}
+.email {
+  color: rgb(242, 21, 21);
 }
 .whatsapp {
   color: var(--color-whatsapp);

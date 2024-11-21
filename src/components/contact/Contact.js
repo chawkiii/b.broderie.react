@@ -58,7 +58,7 @@ const Contact = () => {
 
           <div className="social-media">
             {/* Email button with proper alt and accessibility */}
-            <button
+            <a
               className="network-element email"
               title="Send us email"
               onClick={() =>
@@ -67,7 +67,7 @@ const Contact = () => {
             >
               <img src={gmailIcon} alt="Gmail icon" />
               info@bbroderie.com
-            </button>
+            </a>
 
             {/* WhatsApp link */}
             <a
@@ -90,7 +90,7 @@ const Contact = () => {
             </a>
 
             {/* Instagram button with a link to Instagram */}
-            <button
+            <a
               className="network-element instagram"
               title="Follow us on Instagram"
               onClick={() =>
@@ -99,7 +99,7 @@ const Contact = () => {
             >
               <img src={instaIcon} alt="Instagram icon" />
               Instagram
-            </button>
+            </a>
           </div>
         </div>
       </section>
