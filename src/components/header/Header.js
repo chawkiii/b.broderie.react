@@ -16,7 +16,7 @@ function Header() {
   };
 
   return (
-    <header className="header-container">
+    <header id="header" className="header-container">
       <h1 className="home_header">
         <img src={welcome} alt="Welcome" />
         to

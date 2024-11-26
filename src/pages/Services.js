@@ -5,20 +5,35 @@ function Services() {
     <main>
       <h1>Services</h1>
       <ul>
-        <li>
-          <h2>shop</h2>
+        <li id="embodery">
+          <h2>embodery</h2>
           <ul>
-            <li>Ready to wear</li>
-            <li>Custom wear</li>
+            <li>rachmates</li>
+            <li>type de fil</li>
           </ul>
         </li>
         <li>
-          <h2>B2B Partnership</h2>
+          <h2 id="confection">confection textile</h2>
           <ul>
-            <li>Broderie</li>
-            <li>Confection</li>
+            <li>solutions sur mesure</li>
+            <li>Confection industrielle</li>
           </ul>
         </li>
+        <h2 id="shop_service">Shop</h2>
+        <ul>
+          <li>pret a porter</li>
+          <li>tenues professionnelles</li>
+        </ul>
+        <h2 id="service_sup">Services d'accompagnement</h2>
+        <ul>
+          <li>broderie</li>
+          <li>flocage</li>
+          <li>serigraphy</li>
+        </ul>
+        <h2 id="logistic">Logistic et livraison</h2>
+        <ul>
+          <li>livraison</li>
+        </ul>
       </ul>
     </main>
   );

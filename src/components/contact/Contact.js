@@ -57,13 +57,11 @@ const Contact = () => {
           </div>
 
           <div className="social-media">
-            {/* Email button with proper alt and accessibility */}
+            {/* Email link */}
             <a
               className="network-element email"
-              title="Send us email"
-              onClick={() =>
-                (window.location.href = "mailto:info@bbroderie.com")
-              }
+              href="mailto:info@bbroderie.com"
+              title="Send us an email"
             >
               <img src={gmailIcon} alt="Gmail icon" />
               info@bbroderie.com
@@ -89,13 +87,11 @@ const Contact = () => {
               Facebook
             </a>
 
-            {/* Instagram button with a link to Instagram */}
+            {/* Instagram link */}
             <a
+              href="https://www.instagram.com/YourPage"
               className="network-element instagram"
               title="Follow us on Instagram"
-              onClick={() =>
-                (window.location.href = "https://www.instagram.com/YourPage")
-              }
             >
               <img src={instaIcon} alt="Instagram icon" />
               Instagram

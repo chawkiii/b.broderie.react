@@ -34,10 +34,10 @@ const Nav = () => {
   }, []);
 
   return (
-    <header className="header">
+    <div className="header_nav">
       <nav className="nav container">
         <div className="nav__data">
-          <Link to="/" className="nav__logo">
+          <Link to="/#header" className="nav__logo">
             <img src={navLogo} alt="Logo" />
           </Link>
           <div
@@ -92,7 +92,7 @@ const Nav = () => {
                     </div>
 
                     <Link
-                      to="/about"
+                      to="/about#header"
                       className="dropdown__link"
                       onClick={() => setShowMenu(false)}
                     >
@@ -102,7 +102,7 @@ const Nav = () => {
                     <ul className="dropdown__list">
                       <li>
                         <Link
-                          to="/about"
+                          to="/about#about"
                           className="dropdown__link"
                           onClick={() => setShowMenu(false)}
                         >
@@ -111,11 +111,11 @@ const Nav = () => {
                       </li>
                       <li>
                         <Link
-                          to="/about#what-we-do"
+                          to="/about#contact"
                           className="dropdown__link"
                           onClick={() => setShowMenu(false)}
                         >
-                          What we do?
+                          contact us?
                         </Link>
                       </li>
                     </ul>
@@ -152,7 +152,7 @@ const Nav = () => {
                       <i className="ri-shopping-cart-line"></i>
                     </div>
                     <Link
-                      to="/shop#ready-to-wear"
+                      to="/shop#header"
                       className="dropdown__link"
                       onClick={() => setShowMenu(false)}
                     >
@@ -161,29 +161,29 @@ const Nav = () => {
                     <ul className="dropdown__list">
                       <li>
                         <Link
-                          to="/shop#ready-to-wear"
+                          to="/shop#shop"
                           className="dropdown__link"
                           onClick={() => setShowMenu(false)}
                         >
-                          Ready to wear
+                          Category
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/shop#custom-wear"
+                          to="/shop#products"
                           className="dropdown__link"
                           onClick={() => setShowMenu(false)}
                         >
-                          Custom wear
+                          products
                         </Link>
                       </li>
                       <li>
                         <Link
-                          to="/shop#professional"
+                          to="/shop#contact"
                           className="dropdown__link"
                           onClick={() => setShowMenu(false)}
                         >
-                          Professional wear
+                          contact us ?
                         </Link>
                       </li>
                     </ul>
@@ -222,7 +222,7 @@ const Nav = () => {
 
                     <ul className="dropdown__list">
                       <Link
-                        to="/services"
+                        to="/services#header"
                         className="dropdown__link"
                         onClick={() => setShowMenu(false)}
                       >
@@ -230,11 +230,11 @@ const Nav = () => {
                       </Link>
                       <li>
                         <Link
-                          to="/services#broderie"
+                          to="/services#embodery"
                           className="dropdown__link"
                           onClick={() => setShowMenu(false)}
                         >
-                          Embroidery
+                          Embodery
                         </Link>
                       </li>
                       <li>
@@ -248,11 +248,38 @@ const Nav = () => {
                       </li>
                       <li>
                         <Link
-                          to="/services#flocage"
+                          to="/services#shop_service"
                           className="dropdown__link"
                           onClick={() => setShowMenu(false)}
                         >
-                          Flocage
+                          Shoping
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/services#service_sup"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          service_sup
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/services#logistic"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          logistic
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/services#contact"
+                          className="dropdown__link"
+                          onClick={() => setShowMenu(false)}
+                        >
+                          Contact us ?
                         </Link>
                       </li>
                     </ul>
@@ -264,7 +291,7 @@ const Nav = () => {
             {/* Cart Link */}
             <li>
               <Link
-                to="/cart"
+                to="/cart#header"
                 className="nav__link"
                 onClick={() => setShowMenu(false)}
               >
@@ -274,7 +301,7 @@ const Nav = () => {
           </ul>
         </div>
       </nav>
-    </header>
+    </div>
   );
 };
 

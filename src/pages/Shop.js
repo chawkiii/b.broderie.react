@@ -42,7 +42,7 @@ function Shop() {
   };
 
   return (
-    <section className="shop_section">
+    <section id="shop" className="shop_section">
       <h2>Category</h2>
       <div className="slider-container">
         {radioInputs.map((id, index) => (
@@ -72,10 +72,11 @@ function Shop() {
           )}
         </div>
       </div>
-
-      <h2 className="products-title">Products</h2>
-      <div className="products-grid">
-        {generateProductHTML(productsList[selectedIndex] || [])}
+      <div id="products">
+        <h2 className="products-title">Products</h2>
+        <div className="products-grid">
+          {generateProductHTML(productsList[selectedIndex] || [])}
+        </div>
       </div>
     </section>
   );
