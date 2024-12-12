@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../styles/footer.css";
 import fbIcon from "../../assets/icons/icons8-facebook-48.png";
 import instaIcon from "../../assets/icons/icons8-instagram-48.png";
@@ -23,19 +24,42 @@ function Footer() {
 
             <ul>
               <li>
-                <a href="#home" title="Home">
+                <Link to="/#header" title="Home">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" title="About">
-                  About
-                </a>
+                <Link to="/#overview" title="Overview">
+                  Overview
+                </Link>
               </li>
               <li>
-                <a href="#contact" title="Contact">
+                <Link to="/#contact" title="Contact">
                   Contact
-                </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* About */}
+          <div className="footer-links">
+            <h3>About</h3>
+
+            <ul>
+              <li>
+                <Link to="/about#header" title="About">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/about#about" title="who we are ?">
+                  who we are ?
+                </Link>
+              </li>
+              <li>
+                <Link to="/about#contact" title="Contact">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>

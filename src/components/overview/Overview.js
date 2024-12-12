@@ -1,4 +1,6 @@
 import React, { useRef, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+
 import "../../styles/overview.css";
 
 import img1 from "../../assets/overview/1.jpg";
@@ -8,40 +10,46 @@ import img4 from "../../assets/overview/4.jpg";
 import img5 from "../../assets/overview/5.jpg";
 import img6 from "../../assets/overview/6.jpg";
 
-const images = [
+const cards = [
   {
     src: img1,
     name: "Embroidery",
     description:
       "Industrial embroidery services and products made with superior quality.",
+    btn: "services#embodery",
   },
   {
     src: img2,
     name: "Confection",
     description: "Transforming ideas into realities with creativity.",
+    btn: "services#confection",
   },
   {
     src: img3,
     name: "Shop",
     description:
       "Ready to wear, professionals, or want customized wear, we can satisfy you.",
+    btn: "shop#shop",
   },
   {
     src: img4,
     name: "Services",
     description:
-      "We can provide services such as embroidery, flocage, serigraphy...",
+      "We can provide services such as embroidery, flocage, serigraphy and more.",
+    btn: "services#service_sup",
   },
   {
     src: img5,
     name: "Technology",
     description:
       "We are professionals with the best tools and machines in the industry.",
+    btn: "about#about",
   },
   {
     src: img6,
     name: "B2B",
     description: "We are open to partnerships.",
+    btn: "services#contact",
   },
 ];
 
@@ -72,6 +80,11 @@ function Overview() {
     }, 10000); // Slide every 10 seconds
   }, [handleNext]);
 
+  // Pause the auto-slide
+  const pauseAutoSlide = useCallback(() => {
+    clearInterval(intervalRef.current);
+  }, []);
+
   useEffect(() => {
     startAutoSlide(); // Start auto slide on mount
 
@@ -79,27 +92,25 @@ function Overview() {
   }, [startAutoSlide]); // Depend only on startAutoSlide
 
   return (
-    <section className="overview">
-      <div className="spartas">
-        <h2>Overview</h2>
-        <p>
-          We do a lot of things... you can see these images as examples or take
-          a closer look at them ;)
-        </p>
-      </div>
-
+    <section id="overview">
       <div className="slider_container">
         <div id="slide" ref={slideRef}>
-          {images.map((img, index) => (
+          {cards.map((img, index) => (
             <div
               key={index}
               className="item"
               style={{ backgroundImage: `url(${img.src})` }}
             >
-              <div className="content">
+              <div
+                className="content"
+                onMouseEnter={pauseAutoSlide} // Pause on hover
+                onMouseLeave={startAutoSlide} // Resume on leave
+              >
                 <div className="name">{img.name}</div>
                 <div className="description">{img.description}</div>
-                <button>See more</button>
+                <button>
+                  <Link to={img.btn}>See more</Link>
+                </button>
               </div>
             </div>
           ))}

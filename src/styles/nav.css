@@ -154,6 +154,7 @@
   font-weight: var(--font-semi-bold);
   color: var(--title-color);
 }
+
 .dropdown__list {
   row-gap: 0.25rem;
 }
@@ -163,8 +164,9 @@
   color: var(--text-color);
   transition: color 0.3s;
 }
-.dropdown__link:hover {
-  color: var(--title-color);
+.dropdown__link:hover,
+.dropdown__title:hover {
+  color: var(--first-color);
 }
 
 /* Affichage du sous-menu */
@@ -262,7 +264,8 @@
   .dropdown__link {
     font-size: var(--small-font-size);
   }
-  .dropdown__link:hover {
+  .dropdown__link:hover,
+  .dropdown__title:hover {
     color: var(--first-color);
   }
   .dropdown__item {

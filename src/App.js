@@ -16,7 +16,7 @@ import Contact from "./components/contact/Contact.js";
 import Footer from "./components/footer/Footer.js";
 
 // Import des functions
-import ScrollToHash from "../src/components/functions/ScrollToHash.js";
+import ScrollToHash from "./functions/ScrollToHash.js";
 
 const App = () => {
   return (

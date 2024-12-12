@@ -96,7 +96,7 @@ const Nav = () => {
                       className="dropdown__link"
                       onClick={() => setShowMenu(false)}
                     >
-                      <span className="dropdown__title"> About</span>
+                      <span className="dropdown__title">About</span>
                     </Link>
 
                     <ul className="dropdown__list">

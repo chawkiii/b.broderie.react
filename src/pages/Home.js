@@ -4,9 +4,9 @@ import Overview from "../components/overview/Overview";
 function Home() {
   return (
     <>
-      <main>
+      <section>
         <Overview />
-      </main>
+      </section>
     </>
   );
 }
